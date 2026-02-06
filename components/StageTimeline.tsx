@@ -89,7 +89,7 @@ export const StageTimeline: React.FC<StageTimelineProps> = ({ onNext }) => {
             <div
               key={scene.id}
               data-index={index}
-              className={`flex-shrink-0 w-full h-full snap-center flex flex-col items-center justify-start pt-24 p-8 transition-colors duration-700 ${scene.bg} relative overflow-hidden`}
+              className={`flex-shrink-0 w-full h-full snap-center flex flex-col items-center justify-start pt-20 md:pt-24 p-6 md:p-8 transition-colors duration-700 ${scene.bg} relative overflow-hidden`}
             >
               {/* Background Decoration */}
               <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -187,19 +187,20 @@ export const StageTimeline: React.FC<StageTimelineProps> = ({ onNext }) => {
               </div>
 
               {/* Text Content */}
-              <div className={`text-center max-w-2xl px-8 py-10 z-10 transition-all duration-1000 delay-300 transform ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} bg-white/25 backdrop-blur-xl rounded-[2.5rem] border border-white/40 shadow-[0_8px_32px_0_rgba(255,182,193,0.3)] saturate-150 relative`}>
-                <span className="inline-block px-4 py-1.5 bg-rose-100 rounded-full text-xs font-bold tracking-[0.2em] text-rose-500 mb-6 uppercase shadow-inner">{scene.year}</span>
-                <h2 className="text-5xl md:text-6xl text-gray-800 mb-6 font-script leading-tight">{scene.title}</h2>
-                <p className={`text-xl md:text-2xl text-gray-600 leading-relaxed font-sans ${index === SCENES.length - 1 ? 'mb-10' : ''}`}>{scene.text}</p>
+              <div className={`text-center max-w-2xl px-6 md:px-8 py-8 md:py-10 z-10 transition-all duration-1000 delay-300 transform ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} bg-white/25 backdrop-blur-xl rounded-[2rem] md:rounded-[2.5rem] border border-white/40 shadow-[0_8px_32px_0_rgba(255,182,193,0.3)] saturate-150 relative max-h-[50vh] overflow-y-auto`}>
+                <span className="inline-block px-4 py-1.5 bg-rose-100 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] text-rose-500 mb-4 md:mb-6 uppercase shadow-inner">{scene.year}</span>
+                {index === SCENES.length - 1 && <h1 className="font-script text-3xl md:text-6xl text-rose-600 mb-2">Hey Prity...</h1>}
+                <h2 className="text-3xl md:text-6xl text-gray-800 mb-4 md:mb-6 font-script leading-tight">{scene.title}</h2>
+                <p className={`text-lg md:text-2xl text-gray-600 leading-relaxed font-sans ${index === SCENES.length - 1 ? 'mb-8 md:mb-10' : ''}`}>{scene.text}</p>
 
                 {/* Final Button integrated into container */}
                 {index === SCENES.length - 1 && (
                   <button
                     onClick={onNext}
-                    className="group relative px-10 py-5 bg-rose-600 text-white rounded-full font-bold text-xl shadow-xl hover:bg-rose-700 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 mx-auto"
+                    className="group relative px-8 md:px-10 py-4 md:py-5 bg-rose-600 text-white rounded-full font-bold text-lg md:text-xl shadow-xl hover:bg-rose-700 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 mx-auto"
                   >
                     <span>The Question?</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    <svg width="20" height="20" md:width="24" md:height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     <div className="absolute inset-0 rounded-full ring-4 ring-rose-400 ring-opacity-50 animate-pulse"></div>
                   </button>
                 )}
@@ -207,10 +208,10 @@ export const StageTimeline: React.FC<StageTimelineProps> = ({ onNext }) => {
 
               {/* Swipe Next Hint (absolute bottom right as requested) */}
               {index < SCENES.length - 1 && (
-                <div className="absolute bottom-8 right-8 animate-bounce z-20 flex items-center gap-3 text-rose-400 bg-white/80 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-rose-50 group hover:scale-110 transition-transform">
-                  <span className="text-xs font-bold tracking-[0.2em]">SWIPE NEXT</span>
-                  <div className="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-white shadow-md">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 animate-bounce z-20 flex items-center gap-2 md:gap-3 text-rose-400 bg-white/80 backdrop-blur-md px-4 py-2 md:px-5 md:py-3 rounded-full shadow-lg border border-rose-50 group hover:scale-110 transition-transform">
+                  <span className="text-[10px] md:text-xs font-bold tracking-[0.2em]">SWIPE NEXT</span>
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-rose-500 flex items-center justify-center text-white shadow-md">
+                    <svg width="14" height="14" md:width="18" md:height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </div>
                 </div>
               )}
