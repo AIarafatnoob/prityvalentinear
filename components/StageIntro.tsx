@@ -23,7 +23,7 @@ export const StageIntro: React.FC<StageIntroProps> = ({ onNext }) => {
       </div>
 
       <div className="relative group cursor-pointer" onClick={() => !isOpen && setIsOpen(true)}>
-        <div className="relative w-[320px] h-[220px] md:w-[420px] md:h-[280px]">
+        <div className="relative w-[320px] h-[220px] md:w-[380px] md:h-[250px]">
 
           {/* Envelope Back */}
           <div className="absolute inset-0 bg-red-700 rounded-lg shadow-2xl"></div>
@@ -36,7 +36,7 @@ export const StageIntro: React.FC<StageIntroProps> = ({ onNext }) => {
             style={{ transitionDelay: isOpen ? '0.3s' : '0s' }}
           >
             <div className={`transition-all duration-1000 delay-500 flex flex-col items-center h-full justify-center ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <h1 className="font-script text-4xl md:text-5xl text-red-600 mb-2">Hey Prity...</h1>
+              <h1 className="font-script text-4xl md:text-4xl text-red-600 mb-2">Hey Prity...</h1>
               <p className="text-gray-600 text-base md:text-lg font-sans leading-relaxed mb-4">
                 Chowdhuryyy!!! I wanna ask you something, but first come with me for a recap...
               </p>

@@ -189,8 +189,9 @@ export const StageTimeline: React.FC<StageTimelineProps> = ({ onNext }) => {
               {/* Text Content */}
               <div className={`text-center max-w-2xl px-6 md:px-8 py-8 md:py-10 z-10 transition-all duration-1000 delay-300 transform ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} bg-white/25 backdrop-blur-xl rounded-[2rem] md:rounded-[2.5rem] border border-white/40 shadow-[0_8px_32px_0_rgba(255,182,193,0.3)] saturate-150 relative`}>
                 <span className="inline-block px-4 py-1.5 bg-rose-100 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] text-rose-500 mb-4 md:mb-6 uppercase shadow-inner">{scene.year}</span>
-                <h2 className="text-3xl md:text-6xl text-gray-800 mb-4 md:mb-6 font-script leading-tight">{scene.title}</h2>
-                <p className={`text-lg md:text-2xl text-gray-600 leading-relaxed font-sans ${index === SCENES.length - 1 ? 'mb-8 md:mb-10' : ''}`}>{scene.text}</p>
+                {index === SCENES.length - 1 && <h1 className="font-script text-3xl md:text-5xl text-rose-600 mb-2">Hey Prity...</h1>}
+                <h2 className="text-3xl md:text-5xl text-gray-800 mb-4 md:mb-6 font-script leading-tight">{scene.title}</h2>
+                <p className={`text-lg md:text-xl text-gray-600 leading-relaxed font-sans ${index === SCENES.length - 1 ? 'mb-8 md:mb-10' : ''}`}>{scene.text}</p>
 
                 {/* Final Button integrated into container */}
                 {index === SCENES.length - 1 && (

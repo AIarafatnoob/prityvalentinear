@@ -43,9 +43,9 @@ export const StageQuestion: React.FC<StageQuestionProps> = ({ onYes }) => {
             className="w-72 h-72 rounded-full object-cover border-4 border-rose-400 shadow-2xl mx-auto mb-4"
           />
         </div>
-        <h1 className="text-4xl md:text-8xl text-rose-600 mb-4 drop-shadow-sm font-script leading-tight">
+        <h1 className="text-4xl md:text-6xl text-rose-600 mb-4 drop-shadow-sm font-script leading-tight">
           Nusrat Jahan Prity Chowdhury,
-          <span className="block mt-4 text-3xl md:text-6xl">Will you be my Valentine?</span>
+          <span className="block mt-4 text-3xl md:text-4xl">Will you be my Valentine?</span>
         </h1>
         <p className="text-gray-600 text-lg">
           I promise to get you all the cheesecake and spicy shit as you possibly could want.
