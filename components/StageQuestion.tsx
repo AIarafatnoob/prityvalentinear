@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import hp1 from './assets/hp1.jpeg';
 
 interface StageQuestionProps {
@@ -6,33 +6,6 @@ interface StageQuestionProps {
 }
 
 export const StageQuestion: React.FC<StageQuestionProps> = ({ onYes }) => {
-  const [noButtonStyle, setNoButtonStyle] = useState<React.CSSProperties>({});
-  const [yesScale, setYesScale] = useState(1);
-  const [noText, setNoText] = useState("No");
-  const noTexts = ["No", "Are you sure?", "Really?", "Think again!", "Last chance!", "Pretty please?", "Don't do this", "I'm gonna cry", "PLEASE PRITY"];
-  const [noCount, setNoCount] = useState(0);
-
-  const moveNoButton = () => {
-    // Safer bounds for mobile
-    const safeWidth = window.innerWidth - 120; // accounting for button width
-    const safeHeight = window.innerHeight - 80; // accounting for button height
-
-    const x = Math.max(10, Math.random() * safeWidth);
-    const y = Math.max(10, Math.random() * safeHeight);
-
-    setNoButtonStyle({
-      position: 'absolute',
-      left: `${x}px`,
-      top: `${y}px`,
-      transition: 'all 0.2s ease', // Fast movement makes it harder to catch
-      zIndex: 50 // Ensure it stays on top
-    });
-
-    setYesScale(prev => prev + 0.2);
-    setNoCount(prev => prev + 1);
-    setNoText(noTexts[Math.min(noCount + 1, noTexts.length - 1)]);
-  };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-pink-50 overflow-hidden relative">
       <div className="text-center mb-12 z-10">
@@ -55,19 +28,12 @@ export const StageQuestion: React.FC<StageQuestionProps> = ({ onYes }) => {
       <div className="flex flex-wrap gap-8 items-center justify-center z-20">
         <button
           onClick={onYes}
-          style={{ transform: `scale(${yesScale})` }}
-          className="bg-rose-500 hover:bg-rose-600 text-white font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-200 text-xl hover:shadow-2xl hover:brightness-110"
+          className="bg-rose-500 hover:bg-rose-600 text-white font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-200 text-xl hover:shadow-2xl hover:brightness-110 flex items-center gap-3"
         >
-          YES! ❤️
-        </button>
-
-        <button
-          onMouseEnter={moveNoButton}
-          onClick={moveNoButton} // For mobile touch
-          style={noButtonStyle}
-          className="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-4 px-10 rounded-full shadow-md transition-all duration-200 text-xl whitespace-nowrap"
-        >
-          {noText}
+          <span>See Your Answer</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </button>
       </div>
     </div>
