@@ -45,8 +45,8 @@ export const StageSuccess: React.FC = () => {
       </div>
 
       {/* Photo Frame */}
-      <div className="mb-10 animate-fade-in-up delay-500 transform rotate-2 hover:rotate-0 transition-transform duration-500 cursor-pointer">
-        <div className="bg-white p-3 md:p-4 pb-12 md:pb-16 shadow-2xl rounded-sm max-w-[280px] md:max-w-sm mx-auto relative group">
+      <div className="mb-6 animate-fade-in-up delay-500 transform rotate-2 hover:rotate-0 transition-transform duration-500 cursor-pointer">
+        <div className="bg-white p-3 md:p-4 pb-12 md:pb-14 shadow-2xl rounded-sm max-w-[260px] md:max-w-[300px] mx-auto relative group">
           <div className="absolute -top-3 -right-3 z-20 text-4xl group-hover:scale-110 transition-transform">📌</div>
           <div className="overflow-hidden rounded-sm border border-gray-100">
             <img
@@ -55,7 +55,7 @@ export const StageSuccess: React.FC = () => {
               className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <p className="text-rose-500 font-script text-3xl md:text-4xl absolute bottom-4 left-0 right-0 rotate-[-1deg] opacity-90">Forever & Always ❤️</p>
+          <p className="text-rose-500 font-script text-2xl md:text-3xl absolute bottom-4 left-0 right-0 rotate-[-1deg] opacity-90">Forever & Always ❤️</p>
         </div>
       </div>
 
